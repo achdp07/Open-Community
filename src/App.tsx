@@ -24,13 +24,6 @@ import {
   Lightbulb
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import logo from './images/logoOpen.png';
-import logo1 from './images/logoOpen2.png';
-import hero from './images/hero.png';
-import Rej from './images/Rej.png';
-import unesco from './images/unesco.png';
-import alx from './images/alx.png';
-import gdc from './images/gdc.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +47,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <div className=" flex items-center justify-center">
-            <img src={logo} alt="Logo" className="h-10 object-contain" />
+            <img src alt="Logo" className="h-10 object-contain" />
           </div>
         </div>
 
@@ -142,7 +135,7 @@ const Hero = () => {
           className="relative"
         >
           <div className="relative z-10  p-4 rounded-[2.5rem] ">
-           <img src={hero} alt="hero image" className="rounded-[2.5rem] w-full h-full object-contain aspect-square" />
+           <img src="" alt="hero image" className="rounded-[2.5rem] w-full h-full object-contain aspect-square" />
           </div>
           {/* Decorative elements */}
           <div className="absolute -top-6 -right-6 w-24 h-24 bg-teal-dark rounded-3xl -z-10 rotate-12"></div>
@@ -324,7 +317,7 @@ const Community = () => {
           <div className="order-2 md:order-1">
             <div className="relative">
               <img 
-                src={Rej} 
+                
                 alt="Community Workshop" 
                 className="rounded-[2.5rem] shadow-2xl relative z-10 aspect-square object-cover w-full h-full"
                 referrerPolicy="no-referrer"
@@ -400,9 +393,9 @@ const Partners = () => {
         <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-12">Ils nous font confiance</p>
         <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-90 grayscale hover:grayscale-0 transition-all">
           {/* Placeholder Logos */}
-          <img className="h-18" src={unesco} alt="" />
-          <img className="h-18" src={alx} alt="" />
-          <img className="h-6" src={gdc} alt="" />
+          <img className="h-18"  alt="" />
+          <img className="h-18"  alt="" />
+          <img className="h-6"  alt="" />
         </div>
       </div>
     </section>
@@ -437,7 +430,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <img src={logo1} alt="Logo" className="h-10 object-contain" />
+              <img src="" alt="Logo" className="h-10 object-contain" />
             </div>
             <p className="text-slate-400 max-w-sm mb-8">
               Construire la génération numérique en formant les jeunes aux compétences de demain.
