@@ -1,6 +1,6 @@
 {
   "name": "open-community",
-  "homepage": "https://github.com/achdp07/Open-Community"
+  "homepage": "https://github.com/achdp07/Open-Community",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",
