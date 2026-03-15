@@ -25,6 +25,9 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
+/* Placeholder imports for images - replace with actual paths */
+  
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -47,7 +50,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <div className=" flex items-center justify-center">
-            <img src alt="Logo" className="h-10 object-contain" />
+            <img src="/logo1.png" alt="Logo" className="h-10 object-contain" />
           </div>
         </div>
 
