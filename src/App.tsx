@@ -24,10 +24,13 @@ import {
   Lightbulb
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import logo from './images/logo.png';
-import logo1 from './images/logo1.png';
+import logo from './images/logoOpen.png';
+import logo1 from './images/logoOpen2.png';
 import hero from './images/hero.png';
 import Rej from './images/Rej.png';
+import unesco from './images/unesco.png';
+import alx from './images/alx.png';
+import gdc from './images/gdc.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -298,7 +301,7 @@ const Impact = () => {
   ];
 
   return (
-    <section className="py-20 bg-yellow-neon text-navy-deep">
+    <section className="py-20 bg-slate-100 text-navy-deep">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
           {stats.map((stat, idx) => (
@@ -395,12 +398,11 @@ const Partners = () => {
     <section className="py-20 border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-12">Ils nous font confiance</p>
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all">
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-90 grayscale hover:grayscale-0 transition-all">
           {/* Placeholder Logos */}
-          <div className="text-2xl font-black text-slate-900">GOOGLE</div>
-          <div className="text-2xl font-black text-slate-900">MICROSOFT</div>
-          <div className="text-2xl font-black text-slate-900">ORANGE</div>
-          <div className="text-2xl font-black text-slate-900">META</div>
+          <img className="h-18" src={unesco} alt="" />
+          <img className="h-18" src={alx} alt="" />
+          <img className="h-6" src={gdc} alt="" />
         </div>
       </div>
     </section>
