@@ -25,7 +25,12 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-/* Placeholder imports for images - replace with actual paths */
+import logo from './images/logo1.png'
+import heroImage from './images/hero.png'
+import Rej from './images/rej.png'
+import alx from './images/alx.png'
+import unesco from './images/unesco.png'
+import gdc from './images/gdc.png'
   
 
 const Navbar = () => {
@@ -50,7 +55,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <div className=" flex items-center justify-center">
-            <img src="/logo1.png" alt="Logo" className="h-10 object-contain" />
+            <img src={logo} alt="logo" className="h-10" />
           </div>
         </div>
 
@@ -86,8 +91,8 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <button className="bg-indigo-600 text-white px-6 py-3 rounded-xl text-center font-semibold">
-              Join
+            <button className="bg-teal-dark text-white px-6 py-3 rounded-xl text-center font-semibold">
+              Rejoindre la communauté
             </button>
           </motion.div>
         )}
@@ -138,7 +143,7 @@ const Hero = () => {
           className="relative"
         >
           <div className="relative z-10  p-4 rounded-[2.5rem] ">
-           <img src="" alt="hero image" className="rounded-[2.5rem] w-full h-full object-contain aspect-square" />
+           <img src={heroImage} alt="hero image" className="rounded-[2.5rem] w-full h-full object-contain aspect-square" />
           </div>
           {/* Decorative elements */}
           <div className="absolute -top-6 -right-6 w-24 h-24 bg-teal-dark rounded-3xl -z-10 rotate-12"></div>
@@ -319,7 +324,7 @@ const Community = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1">
             <div className="relative">
-              <img 
+              <img src={Rej}
                 
                 alt="Community Workshop" 
                 className="rounded-[2.5rem] shadow-2xl relative z-10 aspect-square object-cover w-full h-full"
@@ -396,9 +401,9 @@ const Partners = () => {
         <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-12">Ils nous font confiance</p>
         <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-90 grayscale hover:grayscale-0 transition-all">
           {/* Placeholder Logos */}
-          <img className="h-18"  alt="" />
-          <img className="h-18"  alt="" />
-          <img className="h-6"  alt="" />
+          <img src={unesco} className="h-18"  alt="" />
+          <img src={alx} className="h-18"  alt="" />
+          <img src={gdc} className="h-6"  alt="" />
         </div>
       </div>
     </section>
