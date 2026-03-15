@@ -24,7 +24,10 @@ import {
   Lightbulb
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import logo from './images/Logo vert.png';
+import logo from './images/logo.png';
+import logo1 from './images/logo1.png';
+import hero from './images/hero.png';
+import Rej from './images/Rej.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,28 +43,27 @@ const Navbar = () => {
     { name: 'Accueil', href: '#' },
     { name: 'A propos', href: '#about' },
     { name: 'Programmes', href: '#programs' },
-    { name: 'Events', href: '#events' },
+    { name: 'Evenements', href: '#events' },
   ];
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 flex items-center justify-center">
-            <img src={logo} alt="Logo" className="w-10 h-10 object-contain" />
+          <div className=" flex items-center justify-center">
+            <img src={logo} alt="Logo" className="h-10 object-contain" />
           </div>
-          <span className="text-2xl font-bold tracking-tighter text-slate-900">OPEN Community</span>
         </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">
+            <a key={link.name} href={link.href} className="text-sm font-medium text-slate-600 hover:text-teal-dark transition-colors">
               {link.name}
             </a>
           ))}
-          <button className="bg-indigo-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200">
-            Join
+          <button className="bg-teal-dark text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-custom-dark-teal transition-all shadow-lg shadow-custom-dark-blue">
+            Rejoindre
           </button>
         </div>
 
@@ -97,11 +99,11 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-30">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-300 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-200 rounded-full blur-3xl animate-pulse delay-700"></div>
-      </div>
+    <section className="relative pt-20 pb-10 overflow-hidden md:min-h-screen md:flex md:items-center">
+      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-30">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-teal-dark rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-56 h-56 bg-lime-bright rounded-full blur-3xl animate-pulse delay-700"></div>
+      </div> */}
       
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <motion.div
@@ -109,22 +111,22 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-teal-dark text-white rounded-full text-xs font-bold uppercase tracking-wider mb-6">
             <Zap size={14} />
             Génération Numérique
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-slate-900 leading-[1.1] mb-6">
-            OPEN! — Construire la <span className="text-indigo-600">génération</span> numérique
+          <h1 className="text-5xl md:text-5xl font-bold text-slate-900 leading-[1.1] mb-6">
+            Open Community ! Construire la <span className="text-teal-dark">génération</span> numérique
           </h1>
           <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-lg">
             Une communauté qui forme les jeunes aux compétences numériques, à l’innovation et aux technologies de demain.
           </p>
           <div className="flex flex-wrap gap-4">
-            <button className="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 flex items-center gap-2 group">
+            <button className="bg-teal-dark text-white px-8 py-4 rounded-2xl font-bold hover:bg-teal-darker transition-all shadow-xl shadow-teal-dark/20 flex items-center gap-2 group">
               Rejoindre la communauté
               <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="bg-white text-slate-900 border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold hover:border-indigo-600 hover:text-indigo-600 transition-all">
+            <button className="bg-white text-slate-900 border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold hover:border-teal-dark hover:text-teal-dark transition-all">
               Nos programmes
             </button>
           </div>
@@ -136,17 +138,12 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div className="relative z-10 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-slate-100">
-            <img 
-              src="https://picsum.photos/seed/tech-community/800/800" 
-              alt="Tech Innovation" 
-              className="rounded-[2rem] w-full h-auto object-cover aspect-square"
-              referrerPolicy="no-referrer"
-            />
+          <div className="relative z-10  p-4 rounded-[2.5rem] ">
+           <img src={hero} alt="hero image" className="rounded-[2.5rem] w-full h-full object-contain aspect-square" />
           </div>
           {/* Decorative elements */}
-          <div className="absolute -top-6 -right-6 w-24 h-24 bg-indigo-600 rounded-3xl -z-10 rotate-12"></div>
-          <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-emerald-500 rounded-full -z-10 opacity-50"></div>
+          <div className="absolute -top-6 -right-6 w-24 h-24 bg-teal-dark rounded-3xl -z-10 rotate-12"></div>
+          <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-lime-bright rounded-full -z-10 opacity-50"></div>
         </motion.div>
       </div>
     </section>
@@ -156,19 +153,19 @@ const Hero = () => {
 const WhySection = () => {
   const reasons = [
     {
-      icon: <Globe className="text-indigo-600" size={32} />,
+      icon: <Globe className="text-teal-dark" size={32} />,
       title: "Fracture numérique",
       desc: "Réduire les inégalités d'accès aux outils et aux connaissances dans plusieurs communautés."
     },
     {
-      icon: <Cpu className="text-emerald-600" size={32} />,
+      icon: <Cpu className="text-lime-bright" size={32} />,
       title: "Manque de compétences",
       desc: "Combler le déficit de talents digitaux en formant aux technologies les plus demandées."
     },
     {
-      icon: <Rocket className="text-orange-600" size={32} />,
+      icon: <Rocket className="text-navy-deep" size={32} />,
       title: "Accès aux opportunités",
-      desc: "Ouvrir des portes vers des carrières tech et l'entrepreneuriat pour tous les jeunes."
+      desc: "Ouvrir des portes vers des carrières tech et l'entrepreneuriat pour tous."
     }
   ];
 
@@ -177,7 +174,7 @@ const WhySection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Pourquoi Open! ?</h2>
-          <div className="w-20 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
+          <div className="w-20 h-1.5 bg-lime-bright mx-auto rounded-full"></div>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
@@ -202,10 +199,10 @@ const WhySection = () => {
 
 const WhatWeDo = () => {
   const activities = [
-    { title: "FORMATIONS", subtitle: "IA / Data", icon: <Brain />, color: "bg-indigo-600" },
-    { title: "WORKSHOPS", subtitle: "Bootcamps", icon: <Code />, color: "bg-emerald-500" },
-    { title: "COMMUNAUTÉ", subtitle: "Networking", icon: <Users />, color: "bg-orange-500" },
-    { title: "EVENEMENTS", subtitle: "Hackathons", icon: <Calendar />, color: "bg-rose-500" }
+    { title: "FORMATIONS", subtitle: "IA / Data", icon: <Brain />, color: "bg-teal-dark" },
+    { title: "WORKSHOPS", subtitle: "Bootcamps", icon: <Code />, color: "bg-lime-bright" },
+    { title: "COMMUNAUTÉ", subtitle: "Networking", icon: <Users />, color: "bg-navy-deep" },
+    { title: "EVENEMENTS", subtitle: "Hackathons", icon: <Calendar />, color: "bg-yellow-neon" }
   ];
 
   return (
@@ -249,8 +246,8 @@ const Programs = () => {
   ];
 
   return (
-    <section id="programs" className="py-24 bg-slate-900 text-white overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-600/10 skew-x-12 -z-0"></div>
+    <section id="programs" className="py-24 bg-teal-dark text-white overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-lime-bright skew-x-12 -z-0"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
@@ -258,7 +255,7 @@ const Programs = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos programmes</h2>
             <p className="text-slate-400 max-w-xl">Des parcours intensifs et pratiques pour transformer votre passion en expertise.</p>
           </div>
-          <button className="text-indigo-400 font-bold flex items-center gap-2 hover:text-indigo-300 transition-colors group">
+          <button className="text-slate-200 font-bold flex items-center gap-2 hover:text-teal-dark transition-colors group">
             Voir tous les programmes
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </button>
@@ -275,15 +272,15 @@ const Programs = () => {
               className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all group"
             >
               <div className="flex justify-between items-start mb-6">
-                <span className="px-3 py-1 bg-indigo-500/20 text-indigo-400 rounded-full text-xs font-bold uppercase tracking-wider">
+                <span className="px-3 py-1 bg-white/20 text-slate-200 rounded-full text-xs font-bold uppercase tracking-wider">
                   {prog.tag}
                 </span>
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-indigo-600 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                   <ArrowRight size={18} />
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-4">{prog.title}</h3>
-              <p className="text-slate-400 leading-relaxed">{prog.desc}</p>
+              <p className="text-slate-200 leading-relaxed">{prog.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -301,13 +298,13 @@ const Impact = () => {
   ];
 
   return (
-    <section className="py-20 bg-indigo-600 text-white">
+    <section className="py-20 bg-yellow-neon text-navy-deep">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
           {stats.map((stat, idx) => (
             <div key={idx}>
               <div className="text-5xl font-black mb-2">{stat.value}</div>
-              <div className="text-indigo-100 font-medium uppercase tracking-widest text-sm">{stat.label}</div>
+              <div className="text-navy-deep font-medium uppercase tracking-widest text-sm">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -324,9 +321,9 @@ const Community = () => {
           <div className="order-2 md:order-1">
             <div className="relative">
               <img 
-                src="https://picsum.photos/seed/community-workshop/800/600" 
+                src={Rej} 
                 alt="Community Workshop" 
-                className="rounded-[2.5rem] shadow-2xl relative z-10"
+                className="rounded-[2.5rem] shadow-2xl relative z-10 aspect-square object-cover w-full h-full"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-indigo-100 rounded-full -z-0"></div>
@@ -338,7 +335,7 @@ const Community = () => {
             <p className="text-xl text-slate-600 mb-10 leading-relaxed">
               Open! rassemble étudiants, professionnels et créateurs autour du numérique, de l’innovation et du partage. Nous croyons que le futur se construit ensemble.
             </p>
-            <button className="bg-indigo-600 text-white px-10 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200">
+            <button className="bg-teal-dark text-white px-10 py-4 rounded-2xl font-bold hover:bg-teal-darker transition-all shadow-xl shadow-teal-dark/20">
               Rejoindre Open!
             </button>
           </div>
@@ -350,9 +347,9 @@ const Community = () => {
 
 const Events = () => {
   const events = [
-    { title: "AI Workshop", date: "25 Mars 2024", location: "Dakar, Sénégal / Online", icon: <Brain /> },
-    { title: "Tech Meetup", date: "12 Avril 2024", location: "Abidjan, CI", icon: <Users /> },
-    { title: "Bootcamp", date: "01 Mai 2024", location: "Lomé, Togo", icon: <Code /> }
+    { title: "AI Workshop", date: "25 Mars 2026", location: "Dakar, Sénégal / Online", icon: <Brain /> },
+    { title: "Tech Meetup", date: "12 Avril 2026", location: "Abidjan, CI", icon: <Users /> },
+    { title: "Bootcamp", date: "01 Mai 2026", location: "Lomé, Togo", icon: <Code /> }
   ];
 
   return (
@@ -370,7 +367,7 @@ const Events = () => {
               whileHover={{ y: -5 }}
               className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100"
             >
-              <div className="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-14 h-14 bg-teal-dark/20 text-teal-dark rounded-2xl flex items-center justify-center mb-6">
                 {React.cloneElement(event.icon as React.ReactElement, { size: 28 })}
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">{event.title}</h3>
@@ -382,7 +379,7 @@ const Events = () => {
                 <Globe size={14} />
                 {event.location}
               </div>
-              <button className="w-full py-3 rounded-xl border-2 border-slate-100 font-bold text-slate-900 hover:border-indigo-600 hover:text-indigo-600 transition-all">
+              <button className="w-full py-3 rounded-xl border-2 border-slate-100 font-bold text-slate-900 hover:border-teal-dark hover:text-teal-dark transition-all">
                 S'inscrire
               </button>
             </motion.div>
@@ -414,14 +411,14 @@ const CTA = () => {
   return (
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-indigo-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
+        <div className="bg-lime-bright rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent)]"></div>
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">Rejoignez la communauté</h2>
             <p className="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto">
               Développez vos compétences numériques avec Open! et faites partie de la nouvelle génération de leaders tech.
             </p>
-            <button className="bg-white text-indigo-600 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-indigo-50 transition-all shadow-2xl">
+            <button className="bg-white text-teal-dark px-12 py-5 rounded-2xl font-bold text-lg hover:bg-indigo-50 transition-all shadow-2xl">
               Devenir membre
             </button>
           </div>
@@ -433,25 +430,24 @@ const CTA = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-white pt-20 pb-10">
+    <footer className="bg-teal-dark text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">O!</div>
-              <span className="text-2xl font-bold tracking-tighter">OPEN!</span>
+              <img src={logo1} alt="Logo" className="h-10 object-contain" />
             </div>
             <p className="text-slate-400 max-w-sm mb-8">
               Construire la génération numérique en formant les jeunes aux compétences de demain.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-indigo-600 transition-all text-slate-300 hover:text-white">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-lime-bright transition-all text-slate-300 hover:text-white">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-indigo-600 transition-all text-slate-300 hover:text-white">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-lime-bright transition-all text-slate-300 hover:text-white">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-indigo-600 transition-all text-slate-300 hover:text-white">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-lime-bright transition-all text-slate-300 hover:text-white">
                 <Twitter size={20} />
               </a>
             </div>
@@ -463,7 +459,7 @@ const Footer = () => {
               <li><a href="#" className="hover:text-white transition-colors">Accueil</a></li>
               <li><a href="#about" className="hover:text-white transition-colors">A propos</a></li>
               <li><a href="#programs" className="hover:text-white transition-colors">Programmes</a></li>
-              <li><a href="#events" className="hover:text-white transition-colors">Events</a></li>
+              <li><a href="#events" className="hover:text-white transition-colors">Evenements</a></li>
             </ul>
           </div>
 
@@ -471,14 +467,14 @@ const Footer = () => {
             <h4 className="font-bold mb-6">Contact</h4>
             <ul className="space-y-4 text-slate-400">
               <li>contact@open-community.org</li>
-              <li>+221 77 000 00 00</li>
-              <li>Dakar, Sénégal</li>
+              <li>+222 00 000 00 00</li>
+              <li>Nouakchott, Mauritanie</li>
             </ul>
           </div>
         </div>
         
-        <div className="pt-10 border-t border-white/5 text-center text-slate-500 text-sm">
-          © {new Date().getFullYear()} Open! Community. Tous droits réservés.
+        <div className="pt-10 border-t border-white/5 text-center text-slate-200 text-sm">
+          © {new Date().getFullYear()} Open Community. Tous droits réservés.
         </div>
       </div>
     </footer>

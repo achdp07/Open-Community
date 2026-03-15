@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+  --color-navy-deep: #042940;
+  --color-teal-dark: #005C53;
+  --color-lime-bright: #9FC131;
+  --color-yellow-neon: #DBF227;
+  --color-sand-light: #D6D58E;
+  
+  
+  /* Map Montserrat to the default sans font stack */
+  --font-sans: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
