@@ -24,6 +24,7 @@ import {
   Lightbulb
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import logo from './images/Logo vert.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,8 +47,10 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">O!</div>
-          <span className="text-2xl font-bold tracking-tighter text-slate-900">OPEN!</span>
+          <div className="w-10 h-10 flex items-center justify-center">
+            <img src={logo} alt="Logo" className="w-10 h-10 object-contain" />
+          </div>
+          <span className="text-2xl font-bold tracking-tighter text-slate-900">OPEN Community</span>
         </div>
 
         {/* Desktop Nav */}
