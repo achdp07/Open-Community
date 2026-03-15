@@ -26,6 +26,7 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 
 import logo from './images/logo1.png'
+import logo2 from './images/logo2.png'
 import heroImage from './images/hero.png'
 import Rej from './images/rej.png'
 import alx from './images/alx.png'
@@ -81,9 +82,9 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={{ opacity: 0, y: -30 }}
             className="absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 p-6 md:hidden flex flex-col gap-4"
           >
             {navLinks.map((link) => (
@@ -103,7 +104,7 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative pt-20 pb-10 overflow-hidden md:min-h-screen md:flex md:items-center">
+    <section className="relative pt-20 overflow-hidden md:min-h-screen md:flex md:items-center">
       {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-30">
         <div className="absolute top-20 left-10 w-72 h-72 bg-teal-dark rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-56 h-56 bg-lime-bright rounded-full blur-3xl animate-pulse delay-700"></div>
@@ -142,8 +143,8 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div className="relative z-10  p-4 rounded-[2.5rem] ">
-           <img src={heroImage} alt="hero image" className="rounded-[2.5rem] w-full h-full object-contain aspect-square" />
+          <div className="relative z-10  rounded-[2.5rem] justify-center flex">
+           <img src={heroImage} alt="hero image" className="rounded-[2.5rem] w-80 object-contain" />
           </div>
           {/* Decorative elements */}
           <div className="absolute -top-6 -right-6 w-24 h-24 bg-teal-dark rounded-3xl -z-10 rotate-12"></div>
@@ -438,7 +439,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <img src="" alt="Logo" className="h-10 object-contain" />
+              <img src={logo2} alt="Logo" className="h-10 object-contain" />
             </div>
             <p className="text-slate-400 max-w-sm mb-8">
               Construire la génération numérique en formant les jeunes aux compétences de demain.
@@ -486,7 +487,7 @@ const Footer = () => {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-indigo-100 selection:text-indigo-600">
+    <div className="min-h-screen bg-white font-sans selection:bg-indigo-100 selection:text-indigo-600 ">
       <Navbar />
       <main>
         <Hero />
