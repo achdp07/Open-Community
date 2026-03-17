@@ -1,6 +1,8 @@
 [build]
   command = "npm run build"
-  publish = "dist"
+  commandOrigin: "config"
+  publish: "/opt/build/repo/dist"
+  publishOrigin: "config"
 
 [dev]
   framework = "vite"
