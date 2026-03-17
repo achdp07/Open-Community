@@ -470,8 +470,8 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-6">Contact</h4>
             <ul className="space-y-4 text-slate-400">
-              <li>contact@open-community.org</li>
-              <li>+222 00 000 00 00</li>
+              <li>openmr.contact@gmail.com</li>
+              <li>+222 41 05 21 18</li>
               <li>Nouakchott, Mauritanie</li>
             </ul>
           </div>
