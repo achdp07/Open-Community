@@ -2,7 +2,8 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
-
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Join from "./Join";
 import React, { useState, useEffect } from 'react';
 import { 
   Users, 
@@ -33,6 +34,18 @@ import alx from './images/alx.png'
 import unesco from './images/unesco.png'
 import gdc from './images/gdc.png'
   
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/join" element={<Join />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,9 +80,12 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+
+          <Link to="/join"> 
           <button className="bg-teal-dark text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-custom-dark-teal transition-all shadow-lg shadow-custom-dark-blue">
             Rejoindre
           </button>
+          
         </div>
 
         {/* Mobile Menu Button */}
